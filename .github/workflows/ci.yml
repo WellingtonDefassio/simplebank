@@ -40,11 +40,7 @@ jobs:
       - name: show files
         run: ls
       - name: move migrate
-        run: sudo mv migrate /usr/bin/migrate
-      - name: open folder
-        run: cd /usr/bin/migrate
-      - name: list folder
-        run: ls
+        run: sudo mv migrate /usr/bin/migrate | which migrate
       - name: Run migration db
         run: make migrateup
       - name: Test

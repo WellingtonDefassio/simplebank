@@ -37,7 +37,13 @@ jobs:
 
       - name: install go migrate
         run: curl -L https://github.com/golang-migrate/migrate/releases/download/v4.16.2/migrate.linux-amd64.tar.gz | tar xvz
-      - name: move migrate to folder
+      - name: show files
+        run: ls
+      - name: move migrate
+        run: mv migrate /usr/bin/migrate
+      - name: open folder
+        run: cd /usr/bin/migrate
+      - name: list folder
         run: ls
       - name: Run migration db
         run: make migrateup
